@@ -10,7 +10,7 @@ class DB
     // This constructor creates a connection to the database and returns an error if connection fails
     function __construct()
     {
-        $this->connection = new mysqli($_SERVER['DB_SERVER'], $_SERVER['DB_USER'], $_SERVER['DB_PASSWORD'], $_SERVER['DB']);
+        $this->connection = new mysqli('us-cdbr-iron-east-02.cleardb.net', 'b4aa8e45c817d6', 'd1f11e8a', 'heroku_397bc6964b0e051');
         
         if ($this->connection->connect_error) {
             echo "Connection failed: ".mysqli_connect_error();
