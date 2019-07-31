@@ -10,7 +10,7 @@ class DB
     // This constructor creates a connection to the database and returns an error if connection fails
     function __construct()
     {
-        if ($url = env('CLEARDB_DATABASE_URL', false)) {
+        if ($url = getenv('CLEARDB_DATABASE_URL', false)) {
             $parts = parse_url($url);
             $host = $parts["host"];
             $username = $parts["user"];
