@@ -10,14 +10,14 @@ class DB
     // This constructor creates a connection to the database and returns an error if connection fails
     function __construct()
     {
-        $url = env('CLEARDB_DATABASE_URL');
-        $parts = parse_url($url);
-        $host = $parts["host"];
-        $username = $parts["user"];
-        $password = $parts["pass"];
-        $database = substr($parts["path"], 1);
+        // $url = env('CLEARDB_DATABASE_URL');
+        // $parts = parse_url($url);
+        // $host = $parts["host"];
+        // $username = $parts["user"];
+        // $password = $parts["pass"];
+        // $database = substr($parts["path"], 1);
 
-        $this->connection = new mysqli($host, $username, $password, $database);
+        $this->connection = new mysqli('us-cdbr-iron-east-02.cleardb.net', 'b3a19f43357685', 'pdcc96e1b', 'heroku_97af016ebf22761');
 
         if ($this->connection->connect_error) {
             echo "Connection failed: " . mysqli_connect_error();
